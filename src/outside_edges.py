@@ -1,7 +1,6 @@
 import os, sys, time
 import tkinter as tk
-from tkinter import *
-from tkinter import ttk
+
 
 
 # メインウィンドウ作成
@@ -13,22 +12,19 @@ root.title("Oekaki Hack")
 #メインウィンドウを1280x720にする
 root.geometry("1280x720")
 
-#フレーム（カメラの映像映す用）を左上に描画
-frame1 = ttk.Frame(
-    root,
-    height=200,
-    width=300,
-    relief='ridge',
-    borderwidth=5)
-frame1.place(x=150,y=100)
 
-#フレーム（画像の描画用）を右下に描画
-frame2 = ttk.Frame(
-    root,
-    height=400,
-    width=600,
-    relief='ridge',
-    borderwidth=5)
-frame2.place(x=530,y=220)
+#メインウィンドウ全体をキャンバスにする
+canvas = tk.Canvas(root,width = 1280, height = 720)
+
+#キャンバスの位置を指定
+canvas.place(x=0,y=0)
+
+#カメラ用の部分（左上）を塗りつぶし（目印）
+canvas.create_rectangle(200, 100, 420, 280, fill = 'green', stipple = 'gray25')
+
+
+#お絵かき用の部分（右下）を塗りつぶし（目印）
+canvas.create_rectangle(500, 300, 900, 600, fill = 'blue', stipple = 'gray25')
+
 
 root.mainloop()
