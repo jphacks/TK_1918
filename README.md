@@ -12,7 +12,7 @@
 
 ### 製品説明
 『サボるお絵かき』は手を使わずに**目**を使うことでお絵かきを実現します。
-[![detail of sys](https://github.com/jphacks/TK_1918/blob/master/oekaki_sys.png)
+![detail of sys](https://github.com/jphacks/TK_1918/blob/master/oekaki_sys.png)
 
 これまでの技術では、アイトラッキングを行うには専用のカメラを利用する必要がありました。
 そこで、NECの”遠隔視線推定API”を利用することによって、Webカメラさえあればリアルタイムにトラッキングをすることを可能にしました。
