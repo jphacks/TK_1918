@@ -1,6 +1,6 @@
 # サボるお絵描き
 
-[![Product Name](image.png)](https://www.youtube.com/watch?v=G5rULR53uMk)
+[![Product Name](https://github.com/jphacks/TK_1918/blob/master/src/logo_ori.png)](https://www.youtube.com/watch?v=G5rULR53uMk)
 
 ## 製品概要
 ### お絵描き X Tech
