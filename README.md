@@ -1,6 +1,6 @@
 # サボるお絵描き
 
-[![Product Name](image.png)](https://www.youtube.com/watch?v=G5rULR53uMk)
+[![Product Name](oekaki_sys.png)](https://www.youtube.com/watch?v=G5rULR53uMk)
 
 ## 製品概要
 ### お絵描き X Tech
