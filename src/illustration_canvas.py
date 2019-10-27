@@ -88,7 +88,7 @@ class Canvas:
     #add point
     def add_point(self,x:float,y:float)->None:
         self.ps[-1].append((2*x-1,2*y-1))
-        print(self.ps)
+        #print(self.ps)
 
     def get_frame(self)->(bool,any):
         #glutDisplayFunc(self.draw)

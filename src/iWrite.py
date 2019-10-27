@@ -26,7 +26,8 @@ class App:
         self.i_can.place(x=self.i_pos[0],y=self.i_pos[1])
 
         #open video source
-        video_source=0
+        #video_source=0
+        video_source = "http://10.10.0.200:8081/"
         self.vid = video_canvas.MyVideoCapture(video_source)
 
         #open illust canvas
