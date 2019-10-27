@@ -1,4 +1,6 @@
+#!/usr/bin/env python3
 import tkinter
+from tkinter import *
 import cv2
 import PIL.Image, PIL.ImageTk
 import time
@@ -26,8 +28,8 @@ class App:
         self.i_can.place(x=self.i_pos[0],y=self.i_pos[1])
 
         #open video source
-        #video_source=0
-        video_source = "http://10.10.0.200:8081/"
+        video_source=0
+        #video_source = "http://10.10.0.200:8081/"
         self.vid = video_canvas.MyVideoCapture(video_source)
 
         #open illust canvas
@@ -36,14 +38,19 @@ class App:
         #self.btn_snapshot=tk.Button(window, text="Snapshot", width=50, command=self.snapshot)
         #self.btn_snapshot.pack(anchor=tk.CENTER, expand=True)
 
+        logofile=PhotoImage(file="logo_min.png")
+        self.logo_can=Canvas(width=400,height=200)
+        self.logo_can.place(x=self.v_pos[0], y=self.v_pos[1] + self.v_size[1])
+        self.logo_can.create_image(0,0,image=logofile,anchor=NW)
+
         # After it is called once, the update method will be automatically called every delay milliseconds
         self.v_video_delay=15
         self.v_video_update()
 
-        self.v_gaze_delay = 1000
+        self.v_gaze_delay = 300
         self.v_gaze_update()
 
-        self.i_delay=500
+        self.i_delay=200
         self.i_update()
 
         self.window.mainloop()

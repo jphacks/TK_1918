@@ -67,10 +67,10 @@ class Canvas:
         glEnd()
 
     def draw(self)->None:
-        glClearColor(1.0, 1.0, 1.0, 0.0)
+        glClearColor(255/255, 246/255, 201/255, 0.0)
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
 
-        glColor(0,0,0,0)
+        glColor(45/255,33/255,11/255,0)
         #glBegin(GL_TRIANGLES)
         #glVertex3f(-100, -100,0)
         #glVertex3f(100, -100,0)
