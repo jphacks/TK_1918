@@ -74,15 +74,15 @@ def estimateGaze(img):
             gaze = result['gaze']
 
             # Show the result
-            cv2.circle(img, (int(reye[0]), int(reye[1])), 15, eyesColor, thickness=2)
-            cv2.circle(img, (int(leye[0]), int(leye[1])), 15, eyesColor, thickness=2)
+            #cv2.circle(img, (int(reye[0]), int(reye[1])), 15, eyesColor, thickness=2)
+            #cv2.circle(img, (int(leye[0]), int(leye[1])), 15, eyesColor, thickness=2)
             center = ((reye[0]+leye[0])/2, (reye[1]+leye[1])/2)
             gazeTop = (center[0] + gazeLen * math.sin(math.radians(gaze[0])), center[1] + gazeLen * math.sin(math.radians(gaze[1])))
-            cv2.arrowedLine(img, (int(center[0]), int(center[1])), (int(gazeTop[0]), int(gazeTop[1])), gazeColor, thickness=2)
+            #cv2.arrowedLine(img, (int(center[0]), int(center[1])), (int(gazeTop[0]), int(gazeTop[1])), gazeColor, thickness=2)
 
             #cv2.imwrite("gaze_output.png",img)
-            cv2.imshow('image', img)
-            cv2.waitKey(0)
-            cv2.destroyAllWindows()
+            #cv2.imshow('image', img)
+            #cv2.waitKey(0)
+            #cv2.destroyAllWindows()
 
 

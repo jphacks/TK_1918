@@ -20,8 +20,8 @@ class Canvas:
         self.height:int = int(height/2)
         #print(self.width)
         #print(self.height)
-        #self.ps:list=[[]]
-        self.ps:list=[[(-0.8,-0.8),(0.8,0.8),(0.8,-0.8)],[(0.4,0.4),(0.4,-0.4)]]
+        self.ps:list=[[]]
+        #self.ps:list=[[(-0.8,-0.8),(0.8,0.8),(0.8,-0.8)],[(0.4,0.4),(0.4,-0.4)]]
         #initialize the library
         if not glfw.init():
             return
@@ -57,6 +57,7 @@ class Canvas:
 
     def write_line(self,p_l:list)->None:
         glBegin(GL_LINES)
+        #glLineWidth(3)
         for i,p in enumerate(p_l):
             #q = (self.width * p[0],self.height * p[1])
             q=p
@@ -70,14 +71,14 @@ class Canvas:
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
 
         glColor(0,0,0,0)
-        glBegin(GL_TRIANGLES)
+        #glBegin(GL_TRIANGLES)
         #glVertex3f(-100, -100,0)
         #glVertex3f(100, -100,0)
         #glVertex3f(0, 100,0)
-        glVertex(-1,-1)
-        glVertex(1,-1)
-        glVertex(0,1)
-        glEnd()
+        #glVertex(-1,-1)
+        #glVertex(1,-1)
+        #glVertex(0,1)
+        #glEnd()
         for l in self.ps:
             self.write_line(l)
         #glFlush()
@@ -87,6 +88,7 @@ class Canvas:
     #add point
     def add_point(self,x:float,y:float)->None:
         self.ps[-1].append((2*x-1,2*y-1))
+        print(self.ps)
 
     def get_frame(self)->(bool,any):
         #glutDisplayFunc(self.draw)
@@ -101,7 +103,8 @@ class Canvas:
         glReadBuffer( GL_FRONT )
         self.image_buffer = glReadPixels(0, 0, 2*self.width, 2*self.height, GL_RGB, GL_UNSIGNED_BYTE)
         self.image = np.frombuffer(self.image_buffer,dtype=np.uint8).reshape(2*self.height,2*self.width,3)
-        self.image = self.image[::-1]
+        #self.image = self.image[::-1]
+        self.image = cv2.flip(self.image, 1)
         #pil_img = Image.fromarray(self.image)
         #pil_img.save('image.png')
         #print(len(self.image))
