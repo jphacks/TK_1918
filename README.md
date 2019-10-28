@@ -62,7 +62,6 @@
 * OpenCV
 * OpenGL
 * Tkinter
-* socket
 
 #### デバイス
 * Raspberry Pi
